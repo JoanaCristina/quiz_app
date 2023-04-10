@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "282971265855",
+    "project_id": "paracelsoapp",
+    "storage_bucket": "paracelsoapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282971265855:android:be630da13d7f222226918a",
+        "android_client_info": {
+          "package_name": "com.example.quiz_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282971265855-vf25cgjjv6tj3rkor3c7lvbapfr4galb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVBoIbrE5zEKD7_bWteaMYrgffWFJmVw4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282971265855-vf25cgjjv6tj3rkor3c7lvbapfr4galb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
