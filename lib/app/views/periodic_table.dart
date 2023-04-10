@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:quiz_app/app/models/element_model.dart';
 
 import '../services/database.dart';
@@ -985,19 +986,15 @@ class _PeriodicTableState extends State<PeriodicTable> {
   void initState() {
     super.initState();
     getPeriodicTableData();
-
-    /*  SystemChrome.setPreferredOrientations([
-      DeviceOrientation.landscapeLeft,
-      DeviceOrientation.landscapeRight,
-    ]);*/
+    SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]);
   }
 
   @override
   void dispose() {
-/*  SystemChrome.setPreferredOrientations([
+    SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
-    ]);*/
+    ]);
 
     super.dispose();
   }
@@ -1033,200 +1030,187 @@ class _PeriodicTableState extends State<PeriodicTable> {
                       ],
                     ),
                     Positioned(
-                      top: MediaQuery.of(context).size.height*0.08,
-                      left: MediaQuery.of(context).size.width*0.26,
-                        child: Row(
-                          
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  width: 20,
-                                  height: 20,
-                                  color: Colors.green,
-                                ),
-                                const Text("Nao Metais",style:TextStyle(fontSize: 11))
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 2,
-                            ),
-
-                             Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  width: 20,
-                                  height: 20,
-                                  color: Colors.purple,
-                                ),
-                                const Text("Metais Alcalinos",style:TextStyle(fontSize: 11))
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 2,
-                            ),
-
-                             Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  width: 20,
-                                  height: 20,
-                                  color: Colors.yellow,
-                                ),
-                                const Text("Metais Alcalino-terrosos",style:TextStyle(fontSize: 11))
-                              ],
-                            ),
-                           
-  
-                            const SizedBox(
-                              height: 2,
-                            ),
-
-                             Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  width: 20,
-                                  height: 20,
-                                  color: Colors.blueAccent,
-                                ),
-                                 const SizedBox(
-                              width: 1,
-                            ),
-                                const Text("Gases Nobres",style:TextStyle(fontSize: 11))
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 2,
-                            ),
-
-                             Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  width: 20,
-                                  height: 20,
-                                  color: Colors.green,
-                                ),
-                                 const SizedBox(
-                              width: 1,
-                            ),
-                                const Text("Metaloides",style:TextStyle(fontSize: 11))
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 2,
-                            ),
-                            
-                            
-                          ],
-                        ),
-                      const SizedBox(width: 15,),
-                      Column(
-                         crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  width: 20,
-                                  height: 20,
-                                  color: Colors.purple,
-                                ),
-                                const Text("Halogênios",style:TextStyle(fontSize: 11))
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 2,
-                            ),
-
-                             Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  width: 20,
-                                  height: 20,
-                                  color: Colors.purple,
-                                ),
-                                const Text("Metais de Transicao",style:TextStyle(fontSize: 11))
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 2,
-                            ),
-
-                             Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  width: 20,
-                                  height: 20,
-                                  color: Colors.yellow,
-                                ),
-                                const Text("Metais Representativos",style:TextStyle(fontSize: 11))
-                              ],
-                            ),
-                           
-  
-                            const SizedBox(
-                              height: 2,
-                            ),
-
-                             Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  width: 20,
-                                  height: 20,
-                                  color: Colors.blueAccent,
-                                ),
-                                 const SizedBox(
-                              width: 1,
-                            ),
-                                const Text("Lantanídeos",style:TextStyle(fontSize: 11))
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 2,
-                            ),
-
-                             Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  width: 20,
-                                  height: 20,
-                                  color: Colors.green,
-                                ),
-                                 const SizedBox(
-                              width: 1,
-                            ),
-                                const Text("Actinídeos",style:TextStyle(fontSize: 11))
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 2,
-                            ),
-                            
-                            
-                          ],
-                        ),
-                    
-                      
-                      
-                      ],
-                    ),
-
-
-                    
-                    
-                    
+                      top: MediaQuery.of(context).size.height * 0.08,
+                      left: MediaQuery.of(context).size.width * 0.26,
+                      child: Row(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    width: 20,
+                                    height: 20,
+                                    color: Colors.green,
+                                  ),
+                                  const Text("Nao Metais",
+                                      style: TextStyle(fontSize: 11))
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 2,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    width: 20,
+                                    height: 20,
+                                    color: Colors.purple,
+                                  ),
+                                  const Text("Metais Alcalinos",
+                                      style: TextStyle(fontSize: 11))
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 2,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    width: 20,
+                                    height: 20,
+                                    color: Colors.yellow,
+                                  ),
+                                  const Text("Metais Alcalino-terrosos",
+                                      style: TextStyle(fontSize: 11))
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 2,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    width: 20,
+                                    height: 20,
+                                    color: Colors.blueAccent,
+                                  ),
+                                  const SizedBox(
+                                    width: 1,
+                                  ),
+                                  const Text("Gases Nobres",
+                                      style: TextStyle(fontSize: 11))
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 2,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    width: 20,
+                                    height: 20,
+                                    color: Colors.green,
+                                  ),
+                                  const SizedBox(
+                                    width: 1,
+                                  ),
+                                  const Text("Metaloides",
+                                      style: TextStyle(fontSize: 11))
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 2,
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    width: 20,
+                                    height: 20,
+                                    color: Colors.purple,
+                                  ),
+                                  const Text("Halogênios",
+                                      style: TextStyle(fontSize: 11))
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 2,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    width: 20,
+                                    height: 20,
+                                    color: Colors.purple,
+                                  ),
+                                  const Text("Metais de Transicao",
+                                      style: TextStyle(fontSize: 11))
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 2,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    width: 20,
+                                    height: 20,
+                                    color: Colors.yellow,
+                                  ),
+                                  const Text("Metais Representativos",
+                                      style: TextStyle(fontSize: 11))
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 2,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    width: 20,
+                                    height: 20,
+                                    color: Colors.blueAccent,
+                                  ),
+                                  const SizedBox(
+                                    width: 1,
+                                  ),
+                                  const Text("Lantanídeos",
+                                      style: TextStyle(fontSize: 11))
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 2,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    width: 20,
+                                    height: 20,
+                                    color: Colors.green,
+                                  ),
+                                  const SizedBox(
+                                    width: 1,
+                                  ),
+                                  const Text("Actinídeos",
+                                      style: TextStyle(fontSize: 11))
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 2,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
