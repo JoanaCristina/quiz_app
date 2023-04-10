@@ -16,7 +16,7 @@ class PeriodicTable extends StatefulWidget {
 
 Stream<ElementModel>? elementModelStream;
 StreamController<ElementModel> _elementController =
-    StreamController<ElementModel>();
+    StreamController<ElementModel>.broadcast();
 
 Color getColor(ElementModel elementModel) {
   switch (elementModel.family) {
@@ -1229,33 +1229,31 @@ class _PeriodicTableState extends State<PeriodicTable> {
 
     return Scaffold(
         body: SingleChildScrollView(
-      child: Expanded(
-        child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-            child: Stack(children: [
-              getPeriodicTableWidget(),
-              StreamBuilder(
-                stream: elementsStream,
-                builder: (_, snapshot) {
-                  return Positioned(
-                    left: MediaQuery.of(context).size.width * 0.12,
-                    top: MediaQuery.of(context).size.height * 0.15,
-                    child: !snapshot.hasData
-                        ? const SizedBox()
-                        : Container(
-                            width: 100,
-                            height: 100,
-                            decoration: BoxDecoration(
-                                color: getColor(snapshot.data),
-                                borderRadius: const BorderRadius.all(
-                                    Radius.circular(15))),
-                            child: Center(child: Text(snapshot.data.symbol)),
-                          ),
-                  );
-                },
-              )
-            ])),
-      ),
+      child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+          child: Stack(children: [
+            getPeriodicTableWidget(),
+            StreamBuilder(
+              stream: elementsStream,
+              builder: (_, snapshot) {
+                return Positioned(
+                  left: MediaQuery.of(context).size.width * 0.12,
+                  top: MediaQuery.of(context).size.height * 0.15,
+                  child: !snapshot.hasData
+                      ? const SizedBox()
+                      : Container(
+                          width: 100,
+                          height: 100,
+                          decoration: BoxDecoration(
+                              color: getColor(snapshot.data),
+                              borderRadius: const BorderRadius.all(
+                                  Radius.circular(15))),
+                          child: Center(child: Text(snapshot.data.symbol)),
+                        ),
+                );
+              },
+            )
+          ])),
     ));
   }
 
