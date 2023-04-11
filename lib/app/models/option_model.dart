@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
 
 class Option {
   final String title;
-  final IconData icon;
+  final String imageURL;
 
-  Option({required this.title, required this.icon});
+  Option({required this.title, required this.imageURL});
 }

@@ -11,12 +11,21 @@ class InitialScreen extends StatefulWidget {
 
 class _InitialScreenState extends State<InitialScreen> {
   List<Option> options = [
-    Option(title: " Tabela Periódica", icon: Icons.home),
-    Option(title: " Calculadoras", icon: Icons.home),
-    Option(title: " Conversor de Unidades", icon: Icons.home),
-    Option(title: " Glossário", icon: Icons.home),
-    Option(title: " Tabelas Químicas", icon: Icons.home),
-    Option(title: " Tabela Periódica 6", icon: Icons.home),
+    Option(
+        title: " Tabela Periódica",
+        imageURL: "assets/images/periodic-table.png"),
+    Option(
+        title: " Calculadoras", imageURL: "assets/images/calculadora.png"),
+    Option(
+        title: " Conversor de Unidades",
+        imageURL: "assets/images/calculator.png"),
+    Option(title: " Glossário", imageURL: "assets/images/dicionario.png"),
+    Option(
+        title: " Tabelas Químicas",
+        imageURL: "assets/images/tabela.png"),
+    Option(
+        title: " FlashCards ",
+        imageURL: "assets/images/flashcard.png"),
   ];
 
   @override
@@ -53,19 +62,13 @@ class OptionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
-
-
-
-
     return Card(
         child: Center(
       child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Icon(option.icon, size: 80),
+            Image.asset(option.imageURL),
             Text(option.title),
           ]),
     ));
